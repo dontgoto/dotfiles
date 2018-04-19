@@ -1,0 +1,35 @@
+set wrap
+set linebreak
+set nolist  " list disables linebreak"
+set textwidth=0
+set wrapmargin=0
+
+
+set spelllang=en_us,de_de
+highlight Comment cterm=italic
+
+" remaps
+"inoremap <leader>tt =strftime("%c")
+inoremap <F5> <C-R>=strftime("%a %d %b %Y")<CR>
+
+" disable spellchecking for specific files
+autocmd FileType py set nospell
+autocmd FileType py set colorscheme molokai_dark
+autocmd FileType python set nospell
+autocmd FileType python colorscheme molokai_dark
+autocmd FileType tex colorscheme fruity
+
+
+"relative line numbers
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+"shortcuts""
+nmap <leader>py :!ipython %<CR>
+nmap <leader>ja :!ipython %<CR>
+nmap <leader>ml :!cd .. && make main.pdf<CR>
+nmap <leader>sy   :exec "!zathura %:r.pdf" line('.')  col('.') "% > /dev/null"<cr><cr>
+"nmap <leader>sy   :exec "!szathura %:r.pdf" line('.')  col('.') "% > /dev/null"<cr><cr>
+
+
+set completeopt+=preview

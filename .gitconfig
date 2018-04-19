@@ -1,0 +1,11 @@
+[user]
+	email = philipp2.hoffmann@udo.edu
+	name = Philipp Hoffmann
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
